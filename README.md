@@ -5,6 +5,6 @@ RandAlbum
 -----------
 Selects and adds a random album from the mpd database to the queue
 
-AddSongToFavPlaylist
+AddSongToFavsPlaylist
 --------------------
 Adds the current song to a playlist
