@@ -1,5 +1,7 @@
 # mpc-scripts
-Whatever mpc scripts I come up with
+Whatever mpc scripts I come up with.
+
+One liners as much as possible. Maybe both a script and a one liner.
 
 RandAlbum
 -----------
