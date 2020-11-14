@@ -15,5 +15,5 @@ sort -o "$PLAYLIST" "$PLAYLIST"
 # One liner version of the adding only if its not in the file already
 # song=$(mpc -f %file% current); grep -qxF "$song" "/path/to/playlist.m3u" || echo "$song" >> "/path/to/playlist.m3u"
 
-# Can't remember if this next one works, probably not
+# Can't remember if this next one works, but it should (?)
 # mpc -f %file% current | xargs -I % grep -qxF % "/path/to/playlist.m3u" || echo % >> "/path/to/playlist.m3u"
