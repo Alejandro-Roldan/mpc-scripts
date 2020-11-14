@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLAYLIST='/home/Jupiter/Music/# You May Spank It, ONCE.m3u'
+PLAYLIST='/path/to/playlist.m3u'
 
 # Get the current playing song. -f is the format option, %file% gives the file path
 SONG=$(mpc -f %file% current)
@@ -13,5 +13,7 @@ grep -qxF -- "$SONG" "$PLAYLIST" || echo "$SONG" >> "$PLAYLIST"
 sort -o "$PLAYLIST" "$PLAYLIST"
 
 # One liner version of the adding only if its not in the file already
-#song=$(mpc -f %file% current); grep -qxF "$song" "/home/Mars/musik/# You May Spank It, ONCE.m3u" || echo "$song" >> "/home/Mars/musik/# You May Spank It, ONCE.m3u"
-# mpc -f %file% current | xargs -I % grep -qxF % "/home/Mars/musik/# You May Spank It, ONCE.m3u" || echo % >> "/home/Mars/musik/# You May Spank It, ONCE.m3u"
+# song=$(mpc -f %file% current); grep -qxF "$song" "/path/to/playlist.m3u" || echo "$song" >> "/path/to/playlist.m3u"
+
+# Can't remember if this next one works, probably not
+# mpc -f %file% current | xargs -I % grep -qxF % "/path/to/playlist.m3u" || echo % >> "/path/to/playlist.m3u"
