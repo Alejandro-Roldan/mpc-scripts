@@ -17,7 +17,8 @@
 
 ## This also works plus it gets rid of double quotes, so you can use more easily inside other commands
 ## AND you can do more albums at the same time by changing the number after "shuf -n"
-# mpc list album | shuf -n 1 | xargs -I % mpc findadd album %
+## the -d$'\n' option in xargs sets the delimeter to newline and lets us have quotes inside the argument we are passing to xarg
+# mpc list album | shuf -n 1 | xargs -d$'\n' -I % mpc findadd album %
 
 ## The rest of the comands are what I have for my specific use case, but the important part is whats above
-mpc clear && mpc random off && mpc list album | shuf -n 1 | xargs -I % mpc findadd album % && mpc play
+mpc clear && mpc random off && mpc list album | shuf -n 1 | xargs -d$'\n' -I % mpc findadd album % && mpc play
