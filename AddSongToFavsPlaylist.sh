@@ -1,13 +1,15 @@
 #!/bin/bash
 
 
+## ADD CURRENT PLAYING MPD SONG TO M3U
+
 # Check if the argument is a valid file
 if [[ -f "$1" ]]; then
 	PLAYLIST="$1"
 else
 	echo "Not a valid playlist file"
 	echo "Provide the target playlist file as an argument"
-	exit 1
+	exit 2
 fi
 
 # Get the current playing song. -f is the format option, %file% gives the file path
@@ -28,4 +30,4 @@ echo "Added $SONG to $PLAYLIST"
 
 # One liner version of the adding only if its not in the file already
 #song=$(mpc -f %file% current); grep -qxF "$song" "/playlist/dir/file.m3u" || echo "$song" >> "/playlist/dir/file.m3u"
-#mpc -f %file% current | xargs -I % echo % >> "/playlist/dir/file.m3u"
+#mpc -f %file% current | xargs -I % echo % >> "/playlist/dir/file.m3u" && sort -uo "/playlist/dir/file.m3u" "/playlist/dir/file.m3u"
